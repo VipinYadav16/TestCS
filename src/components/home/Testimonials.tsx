@@ -20,22 +20,22 @@ export const Testimonials = () => {
       id: 1,
       name: "Vipin Yadav",
       role: "Investment Analyst, FundTech Capital",
-      content: "StockGuard has completely transformed how we monitor our portfolio. The AI-powered alerts have already saved us from at least three fraudulent schemes.",
-      avatarSrc: "/id1.jpg"
+      content: "CryptoSentinal has completely transformed how we monitor our portfolio. ",
+      avatarSrc: "/3.jpg"
     },
     {
       id: 2,
       name: "Shubham Tandon",
       role: "Day Trader",
-      content: "As an individual trader, I needed something to help me spot manipulation. StockGuard gives me the same tools that institutional investors have. Well worth every penny.",
-      avatarSrc: "/id2.jpg"
+      content: "As an individual trader, I needed something to help me spot manipulation. ",
+      avatarSrc: "/2.jpg"
     },
     {
       id: 3,
-      name: "Abhay Pratap Singh",
-      role: "Financial Advisor, Wealth Partners",
-      content: "The sentiment analysis feature is exceptionally accurate. It helps us understand market movements before they happen, giving our clients a significant advantage.",
-      avatarSrc: "/id3.jpg"
+      name: "Yajat Gupta",
+      role: "Financial Advisor",
+      content: "It helps us understand market movements before they happen, giving our clients a significant advantage.",
+      avatarSrc: "/1.jpg"
     }
   ];
 
@@ -55,10 +55,10 @@ export const Testimonials = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
-            Trusted by <span className="text-gradient">Financial Professionals</span>
+            Trusted by <span className="text-gradient">Professionals</span>
           </h2>
           <p className="text-muted-foreground text-lg animate-fade-in" style={{ animationDelay: '100ms' }}>
-            Hear from traders and analysts who rely on StockGuard to protect their investments.
+            Hear from people who use on CryptoSentinal to protect their investments.
           </p>
         </div>
         

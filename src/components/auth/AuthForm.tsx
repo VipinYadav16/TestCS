@@ -105,7 +105,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ defaultMode = 'login' }) => {
         <p className="text-muted-foreground mt-2">
           {mode === 'login' 
             ? 'Enter your credentials to access your account' 
-            : 'Join StockGuard to protect your investments'}
+            : 'Join CryptoSentinel to protect your investments'}
         </p>
       </div>
 

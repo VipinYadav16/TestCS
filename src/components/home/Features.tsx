@@ -35,20 +35,20 @@ export const Features = () => {
     },
     {
       icon: <Bell className="h-6 w-6" />,
-      title: "Real-time Alerts",
-      description: "Receive instant notifications about suspicious activities in stocks you're monitoring.",
+      title: "Fast",
+      description: "Receive instant info about suspicious activities",
       delay: 200
     },
     {
       icon: <BarChart4 className="h-6 w-6" />,
-      title: "Market Sentiment Analysis",
+      title: "Market Analysis",
       description: "Track how financial news impacts stock prices with our AI-powered sentiment engine.",
       delay: 300
     },
     {
       icon: <Shield className="h-6 w-6" />,
       title: "Data Privacy & Security",
-      description: "Your financial data is protected with enterprise-grade security that complies with SEBI & GDPR regulations.",
+      description: "Your financial data is protected with security.",
       delay: 400
     }
   ];
@@ -87,10 +87,10 @@ export const Features = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-bold">
-                How Our AI Detects Stock Fraud
+                How Our AI Detects Manipulations
               </h3>
               <p className="text-muted-foreground">
-                Our platform analyzes millions of data points to identify suspicious patterns that humans might miss.
+                Our platform analyzes data points to identify suspicious patterns that humans might miss.
               </p>
               
               <ul className="space-y-3">

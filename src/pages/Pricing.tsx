@@ -1,4 +1,4 @@
-
+// ...existing code...
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, X } from 'lucide-react';
@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
+import SubscribeButton from '@/components/common/SubscribeButton';
 
 const Pricing = () => {
   const [billingMode, setBillingMode] = useState<'monthly' | 'annual'>('monthly');
@@ -17,18 +18,19 @@ const Pricing = () => {
         monthly: 0,
         annual: 0
       },
-      description: 'Basic protection for casual investors',
+      description: 'Basic protection for casual traders',
       features: [
-        { included: true, text: 'Basic fraud detection' },
+        { included: true, text: 'Basic on-chain fraud detection' },
         { included: true, text: '1 day delayed alerts' },
-        { included: true, text: 'Monitor up to 5 stocks' },
+        { included: true, text: 'Monitor up to 5 wallets' },
         { included: false, text: 'Real-time alerts' },
         { included: false, text: 'Sentiment analysis' },
         { included: false, text: 'Historical data access' },
         { included: false, text: 'API access' }
       ],
       cta: 'Get Started',
-      highlighted: false
+      highlighted: false,
+      isBlockchain: false
     },
     {
       name: 'Pro',
@@ -38,16 +40,17 @@ const Pricing = () => {
       },
       description: 'Advanced protection for serious investors',
       features: [
-        { included: true, text: 'Advanced fraud detection' },
+        { included: true, text: 'Advanced on-chain fraud detection' },
         { included: true, text: 'Real-time alerts' },
-        { included: true, text: 'Monitor up to 50 stocks' },
+        { included: true, text: 'Monitor up to 50 wallets' },
         { included: true, text: 'Sentiment analysis' },
         { included: true, text: 'Historical data (3 months)' },
         { included: false, text: 'API access' },
         { included: false, text: 'Custom alert rules' }
       ],
       cta: 'Buy Pro',
-      highlighted: true
+      highlighted: true,
+      isBlockchain: true
     },
     {
       name: 'Enterprise',
@@ -57,16 +60,17 @@ const Pricing = () => {
       },
       description: 'Ultimate protection for professional traders',
       features: [
-        { included: true, text: 'Premium fraud detection' },
+        { included: true, text: 'Premium on-chain fraud detection' },
         { included: true, text: 'Priority real-time alerts' },
-        { included: true, text: 'Unlimited stock monitoring' },
+        { included: true, text: 'Unlimited wallet monitoring' },
         { included: true, text: 'Advanced sentiment analysis' },
         { included: true, text: 'Full historical data access' },
         { included: true, text: 'API access' },
         { included: true, text: 'Custom alert rules' }
       ],
       cta: 'Contact Sales',
-      highlighted: false
+      highlighted: false,
+      isBlockchain: false
     }
   ];
 
@@ -85,7 +89,7 @@ const Pricing = () => {
               Simple, Transparent <span className="text-gradient">Pricing</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-10">
-              Choose the plan that fits your investment strategy. All plans come with a 14-day free trial.
+              Choose the plan that fits your Web3 investment strategy. All plans come with a 14-day free trial.
             </p>
             
             {/* Billing Toggle */}
@@ -95,7 +99,7 @@ const Pricing = () => {
               </span>
               <Switch 
                 checked={billingMode === 'annual'}
-                onCheckedChange={(checked) => setBillingMode(checked ? 'annual' : 'monthly')}
+                onCheckedChange={(checked: boolean) => setBillingMode(checked ? 'annual' : 'monthly')}
               />
               <span className={`text-sm flex items-center ${billingMode === 'annual' ? 'text-white' : 'text-muted-foreground'}`}>
                 Annual
@@ -136,14 +140,14 @@ const Pricing = () => {
                 
                 <div className="mb-6">
                   <span className="text-4xl font-bold">
-                    ${plan.price[billingMode]}
+                    {'$' + plan.price[billingMode]}
                   </span>
                   <span className="text-muted-foreground ml-2">
-                    {plan.price[billingMode] > 0 ? `/month` : ''}
+                    {plan.price[billingMode] > 0 ? '/month' : ''}
                   </span>
                   {billingMode === 'annual' && plan.price.annual > 0 && (
                     <p className="text-sm text-muted-foreground mt-1">
-                      Billed annually (${plan.price.annual * 12}/year)
+                      Billed annually ({'$' + (plan.price.annual * 12)}/year)
                     </p>
                   )}
                 </div>
@@ -163,14 +167,19 @@ const Pricing = () => {
                   ))}
                 </div>
                 
-                <Link to={plan.name === 'Free' ? "/signup" : "/signup"}>
-                  <Button 
-                    className="w-full" 
-                    variant={plan.highlighted ? "default" : "outline"}
-                  >
-                    {plan.cta}
-                  </Button>
-                </Link>
+                {plan.isBlockchain ? (
+                    <SubscribeButton />
+                ) : (
+                    <Link to="/signup">
+                        <Button
+                            className="w-full"
+                            variant={plan.highlighted ? "default" : "outline"}
+                        >
+                            {plan.cta}
+                        </Button>
+                    </Link>
+                )}
+
               </div>
             ))}
           </div>
@@ -218,7 +227,7 @@ const Pricing = () => {
               Ready to protect your investments?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Join thousands of investors who trust StockGuard to keep their portfolios safe from fraud.
+              Join thousands of investors who trust CryptoSentinel to keep their portfolios safe from fraud.
             </p>
             <Link to="/signup">
               <Button size="lg">Get Started Now</Button>
@@ -233,3 +242,4 @@ const Pricing = () => {
 };
 
 export default Pricing;
+// ...existing code...
