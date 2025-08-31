@@ -1,4 +1,4 @@
-# 🚨 CryptoSentinel
+# CryptoSentinel
 
 ## Introduction
 
@@ -184,10 +184,10 @@ This saves a PNG with marked anomalies in `public/pred/`.
 
 ## 👥 Contributors
 
-* **Shubham Tandon** (e23cseu1730)
-* **Vihag Chaturvedi** (e23eecu0005)
-* **Vipin Yadav** (e23cseu1728)
-* **Yajat Gupta** (e23cseu1881)
+* **Shubham Tandon** 
+* **Vihag Chaturvedi**
+* **Vipin Yadav** 
+* **Yajat Gupta** 
 
 ---
 
